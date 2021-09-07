@@ -9,11 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "axios": "^0.21.4",
+    "babel-plugin-styled-components": "^1.13.2",
+    "husky": "^7.0.2",
     "next": "11.1.0",
+    "next-seo": "^4.26.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-icons": "^4.2.0",
+    "react-responsive": "^9.0.0-beta.4",
+    "react-simple-animate": "^3.3.12",
+    "swiper": "^7.0.1"
   },
   "devDependencies": {
+    "@emotion/babel-plugin": "^11.3.0",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.0"
   }

@@ -1,9 +1,34 @@
+@font-face {
+  font-family: "metropolis-bold";
+  src: local("metropolis-bold"), url(../fonts/metropolis.bold.otf);
+}
+
+@font-face {
+  font-family: "metropolis-medium";
+  src: local("metropolis-medium"), url(../fonts/metropolis.medium.otf);
+}
+
+@font-face {
+  font-family: "metropolis-regular";
+  src: local("metropolis-regular"), url(../fonts/metropolis.regular.otf);
+}
+
+@font-face {
+  font-family: "metropolis-semibold";
+  src: local("metropolis-semibold"), url(../fonts/metropolis.semi-bold.otf);
+}
+
+@font-face {
+  font-family: "Franklin-Gothic";
+  src: local("Franklin-Gothic"), url(../fonts/FranklinGothicMedium.ttf);
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "metropolis-regular";
+  background-color: #121212;
 }
 
 a {
@@ -13,4 +38,48 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* height: 530px !important;
+  width: 379px !important; */
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* .activeSlide {
+  transform: scale(1.5);
+} */
+
+@media screen and (max-width: 600px) {
+  .swiper-slide {
+    /* height: 350px !important;
+    width: 250px !important; */
+  }
 }
