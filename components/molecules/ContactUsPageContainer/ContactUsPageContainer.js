@@ -9,7 +9,7 @@ import Heading from "../../atoms/Heading/Heading";
 import TextParagraph from "../../atoms/TextParagraph/TextParagraph";
 import FeedbackMessage from "./FeedbackMessage";
 // import { ImageWrapper } from "../../organisms/Header";
-import backgroundImg from "../../../public/assets/CreepyRoommateBG.png";
+import backgroundImg from "../../../public/assets/contact6.jpg";
 import logoImage from "../../../public/assets/logo.png";
 
 const Container = styled.div`
@@ -47,7 +47,6 @@ const ImageWrapper = styled.div`
   position: relative;
   height: 100vh;
   width: 100%;
-  overflow: none;
 
   @media (max-width: 900px) {
     position: static;
@@ -138,8 +137,8 @@ const HeadingWrapper = styled.div`
 const ContactUsPageContainer = () => {
   const router = useRouter();
   const [formData, setFormData] = useState({
-    form: "jpForm",
-    subject: "Journalpost Contact Form",
+    form: "storytrapForm",
+    subject: "StoryTrap Contact Form",
     name: "",
     email: "",
     phone: "",
@@ -168,8 +167,8 @@ const ContactUsPageContainer = () => {
 
   const resetData = () => {
     setFormData({
-      form: "jpForm",
-      subject: "Journalpost Contact Form",
+      form: "storytrapForm",
+      subject: "StoryTrap Contact Form",
       name: "",
       email: "",
       phone: "",
@@ -192,18 +191,10 @@ const ContactUsPageContainer = () => {
             src={backgroundImg}
             alt="StoryTrap"
             layout="fill"
-            objectFit="cover"
             quality={100}
           />
         </ImageWrapper>
         <Wrapper>
-          {/* <TextWrapper>
-            <TextParagraph center={true} headerText={true}>
-              Have an exciting project in mind? Or maybe would like to improve
-              your current setup? We’d be happy to discuss it with you. Let’s
-              get in touch!
-            </TextParagraph>
-          </TextWrapper> */}
           <Logo
             noMargin={false}
             showText={true}
@@ -264,13 +255,6 @@ const ContactUsPageContainer = () => {
           )}
         </Wrapper>
       </Container>
-      {/* <ImageWrapper contactusForm={true} className="Image Wrapper">
-        <BackgroundImage
-          style={{ height: "100%" }}
-          className="IMAGEEEE"
-          src={backgroundImg}
-        />
-      </ImageWrapper> */}
     </>
   );
 };

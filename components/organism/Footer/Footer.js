@@ -12,6 +12,10 @@ import Section from "../../atoms/Section/Section";
 
 const FooterContainer = styled.footer`
   padding: 5rem 0;
+
+  @media (max-width: 1300px) {
+    padding: 0 3rem;
+  }
 `;
 
 const FooterWrapper = styled.div`
@@ -93,8 +97,7 @@ const Footer = ({ isMobile }) => {
                 height={54}
               />
               <TextParagraph align="left">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-                aliquid, ipsam repellat quas magni a?
+                Escape into the World of Fiction with StoryTrap
               </TextParagraph>
               <ButtonWrapper>
                 <Link href="https://apps.apple.com/in/app/story-trap/id1559372131">

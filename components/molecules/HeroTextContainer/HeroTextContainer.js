@@ -59,7 +59,7 @@ const HeroTextContainer = ({ isMobile }) => {
                 <Link href="https://apps.apple.com/in/app/story-trap/id1559372131">
                   <a target="_blank" rel="noopener noreferrer">
                     <Logo
-                      margin={false}
+                      margin={true}
                       showText={false}
                       src={AppStoreBtn}
                       alt="StoryTrap AppStore"
@@ -72,11 +72,12 @@ const HeroTextContainer = ({ isMobile }) => {
                 <Link href="https://play.google.com/store/apps/details?id=com.journalpost.storytrap">
                   <a target="_blank" rel="noopener noreferrer">
                     <Logo
-                      margin={false}
+                      margin={true}
                       showText={false}
                       src={GooglePlayBtn}
                       alt="StoryTrap Googleplay"
                       path={null}
+                      layout="intrinsic"
                       width={216}
                       height={62.44}
                     />

@@ -30,6 +30,9 @@ const Nav = styled.nav`
   margin: auto;
   z-index: 10;
 
+  @media (max-width: 1300px) {
+    padding: 3rem 3rem;
+  }
   @media (max-width: 1200px) {
     padding: 3rem 3rem;
   }

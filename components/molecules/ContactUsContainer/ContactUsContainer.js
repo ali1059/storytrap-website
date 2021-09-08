@@ -10,6 +10,10 @@ const Container = styled.div`
   height: 452px;
   width: 100%;
 
+  @media (max-width: 1300px) {
+    margin: 0 3rem;
+  }
+
   @media (max-width: 600px) {
     height: 200px;
   }

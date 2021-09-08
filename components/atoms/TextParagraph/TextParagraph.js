@@ -12,7 +12,7 @@ const Text = styled.p`
       : "normal normal normal 16px/19px metropolis"};
   margin: ${(props) => props.nomargin && "0px"};
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     text-align: center;
   }
 `;

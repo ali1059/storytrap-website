@@ -49,7 +49,7 @@ const TextContainer = styled.div`
   align-items: center;
   justify-content: flex-start;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     justify-content: center;
   }
 `;
@@ -68,13 +68,20 @@ const MobileImagesWrapper = styled.div`
   width: 100%;
   position: relative;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     justify-content: flex-start;
+    padding-right: 10%;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     justify-content: center;
-    padding-right: 30%;
+    padding-right: 20%;
+    padding-top: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    justify-content: center;
+    padding-right: 20%;
   }
 `;
 
@@ -97,11 +104,16 @@ const ContentWrapper = styled.div`
     grid-column-gap: 5rem;
   }
 
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
+  @media (max-width: 1024px) {
+    padding-top: 0 70%;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 8rem 3rem;
+  }
+
+  @media (max-width: 480px) {
     padding: 7rem 2rem;
   }
 `;
@@ -207,8 +219,8 @@ const HeroSection = ({ isMobile }) => {
                   src={slidesArray[slide].MobileImage}
                   width={isMobile ? 154 : 250}
                   height={isMobile ? 307 : 499}
+                  layout="intrinsic"
                   placeholder="blur"
-                  priority={true}
                 />
 
                 <SmallMobileWrapper className="---ssmmaallll---">
@@ -217,8 +229,8 @@ const HeroSection = ({ isMobile }) => {
                     src={slidesArray[slide].MobileImageSS}
                     width={isMobile ? 112 : 200}
                     height={isMobile ? 224 : 399}
+                    layout="intrinsic"
                     placeholder="blur"
-                    priority={true}
                   />
                 </SmallMobileWrapper>
               </LargeMobileWrapper>

@@ -14,7 +14,7 @@ const Text = styled.p`
   color: ${(props) => (props.colored ? "#FEA027" : "#f8f8f8")};
   margin: 1rem 0;
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     text-align: center;
   }
 `;
