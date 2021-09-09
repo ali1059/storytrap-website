@@ -7,9 +7,16 @@ import Navbar from "../../organism/Navbar/Navbar";
 import Sidebar from "../../organism/Sidebar/Sidebar";
 import Footer from "../../organism/Footer/Footer";
 
-const Layout = ({ children, title, description, image, url, isBlogPost }) => {
+const Layout = ({
+  children,
+  title,
+  description,
+  image,
+  url,
+  isBlogPost,
+  isMobile,
+}) => {
   const [openSidebar, setOpenSidebar] = useState(false);
-  const isMobile = useMediaQuery({ query: "(max-width:600px)" });
   const router = useRouter();
 
   const toggle = () => {

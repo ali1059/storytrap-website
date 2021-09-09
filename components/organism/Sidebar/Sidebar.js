@@ -19,7 +19,7 @@ const SidebarContainer = styled.div`
 
 const Icon = styled.div`
   position: absolute;
-  top: 5rem;
+  top: 2rem;
   left: 2rem;
   font-size: 2rem;
 `;

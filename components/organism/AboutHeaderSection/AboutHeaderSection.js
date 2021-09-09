@@ -60,7 +60,8 @@ const HeaderText = styled.p`
 
   @media (max-width: 600px) {
     max-width: 350px;
-    font-size: 18px;
+    font-size: 16px;
+    text-align: center;
   }
 `;
 
@@ -93,8 +94,8 @@ const AboutHeaderSection = ({
           <div>
             <Image
               src={posterImage}
-              width={isMobile ? 250 : 377}
-              height={isMobile ? 332 : 500}
+              width={isMobile ? 200 : 377}
+              height={isMobile ? 266 : 500}
             />
           </div>
         </GridWrapper>

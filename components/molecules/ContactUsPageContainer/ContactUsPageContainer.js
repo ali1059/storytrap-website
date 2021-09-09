@@ -3,12 +3,12 @@ import styled from "@emotion/styled";
 import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import Logo from "../../atoms/Logo/Logo";
 
+import Logo from "../../atoms/Logo/Logo";
 import Heading from "../../atoms/Heading/Heading";
 import TextParagraph from "../../atoms/TextParagraph/TextParagraph";
+import useDeviceDetect from "../../hooks/useDeviceDetect";
 import FeedbackMessage from "./FeedbackMessage";
-// import { ImageWrapper } from "../../organisms/Header";
 import backgroundImg from "../../../public/assets/contact6.jpg";
 import logoImage from "../../../public/assets/logo.png";
 
@@ -45,11 +45,10 @@ const Wrapper = styled.div`
 
 const ImageWrapper = styled.div`
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
 
   @media (max-width: 900px) {
-    position: static;
   }
 `;
 
@@ -57,7 +56,11 @@ const FormWrapper = styled.div`
   color: #1c1c1c !important;
   text-align: left;
   max-width: 468px;
-  margin: 3rem auto;
+  margin: ${(props) => (props.isMobile ? "1rem auto" : "3rem auto")};
+
+  @media (max-width: 320px) {
+    margin: 0 auto;
+  }
 `;
 
 const FormFieldLabel = styled.p`
@@ -70,12 +73,12 @@ const FormFieldLabel = styled.p`
 
 const FormFieldInput = styled.input`
   border: none;
-  color: #fff;
+  color: ${(props) => (props.isMobile ? "#000" : "#fff")};
   background: transparent;
   border-bottom: 1px solid #707070;
   width: 100%;
-  padding: 1rem 0;
-  margin-bottom: 2rem;
+  padding: ${(props) => (props.isMobile ? "0.5rem 0" : "1rem 0")};
+  margin-bottom: ${(props) => (props.isMobile ? "0.5rem 0" : "2rem")};
   :focus {
     outline: none;
   }
@@ -85,12 +88,12 @@ const FormFieldTextarea = styled.textarea`
   border: none;
   background: transparent;
   border: 1px solid #707070;
-  color: #fff;
-
+  color: ${(props) => (props.isMobile ? "#000" : "#fff")};
+  resize: none;
   border-radius: 10px;
   width: 100%;
-  padding: 1rem 0;
-  margin-bottom: 2rem;
+  padding: ${(props) => (props.isMobile ? "0.5rem 0" : "1rem 0")};
+  margin-bottom: ${(props) => (props.isMobile ? "0.5rem " : "2rem ")};
   :focus {
     outline: none;
   }
@@ -128,13 +131,19 @@ const SubmitButton = styled.input`
   @media (max-width: 768px) {
     height: 50px;
   }
+
+  @media (max-width: 320px) {
+    height: 40px;
+  }
 `;
 
 const HeadingWrapper = styled.div`
-  padding: 1rem 0;
+  padding: ${(props) => (props.isMobile ? "0.2rem 0" : "1rem 0")};
 `;
 
 const ContactUsPageContainer = () => {
+  const isMobile = useDeviceDetect();
+
   const router = useRouter();
   const [formData, setFormData] = useState({
     form: "storytrapForm",
@@ -184,7 +193,7 @@ const ContactUsPageContainer = () => {
   };
 
   return (
-    <>
+    <div className="PPPPPPPPPPPPPPP">
       <Container className="Sssss">
         <ImageWrapper>
           <Image
@@ -205,14 +214,15 @@ const ContactUsPageContainer = () => {
             width={44}
             height={54}
           />
-          <FormWrapper>
-            <HeadingWrapper>
+          <FormWrapper isMobile={isMobile}>
+            <HeadingWrapper isMobile={isMobile}>
               <Heading colored={true}>CONTACT US</Heading>
             </HeadingWrapper>
 
             <form onSubmit={handleSubmit}>
               <FormFieldLabel>Name</FormFieldLabel>
               <FormFieldInput
+                isMobile={isMobile}
                 onChange={(e) => handleChange("name", e.target.value)}
                 value={formData.name}
                 required
@@ -221,6 +231,7 @@ const ContactUsPageContainer = () => {
               />
               <FormFieldLabel>Email</FormFieldLabel>
               <FormFieldInput
+                isMobile={isMobile}
                 onChange={(e) => handleChange("email", e.target.value)}
                 required
                 value={formData.email}
@@ -229,6 +240,7 @@ const ContactUsPageContainer = () => {
               />
               <FormFieldLabel>Phone</FormFieldLabel>
               <FormFieldInput
+                isMobile={isMobile}
                 onChange={(e) => handleChange("phone", e.target.value)}
                 required
                 value={formData.phone}
@@ -239,6 +251,7 @@ const ContactUsPageContainer = () => {
               <FormFieldTextarea
                 onChange={(e) => handleChange("message", e.target.value)}
                 required
+                isMobile={isMobile}
                 value={formData.message}
                 id=""
                 name=""
@@ -255,7 +268,7 @@ const ContactUsPageContainer = () => {
           )}
         </Wrapper>
       </Container>
-    </>
+    </div>
   );
 };
 

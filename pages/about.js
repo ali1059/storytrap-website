@@ -39,8 +39,6 @@ const Content = [
 ];
 
 const About = () => {
-  useEffect(() => {}, []);
-
   return (
     <Layout>
       {Content.map((item, index) => (

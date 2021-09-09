@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Link from "next/link";
+import { useMediaQuery } from "react-responsive";
 
 import TextParagraph from "../../atoms/TextParagraph/TextParagraph";
 import Logo from "../../atoms/Logo/Logo";
@@ -15,6 +16,10 @@ const FooterContainer = styled.footer`
 
   @media (max-width: 1300px) {
     padding: 0 3rem;
+  }
+
+  @media (max-width: 1200px) {
+    padding: 2rem 0;
   }
 `;
 
@@ -53,9 +58,13 @@ const VerticalLine = styled.div`
 
 const NavPagesList = styled.div`
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row nowrap;
   justify-content: center;
   flex-basis: 50%;
+
+  @media (max-width: 810px) {
+    flex-flow: column;
+  }
 `;
 
 const PagesList = styled.div`
@@ -67,19 +76,23 @@ const PageListItem = styled.a`
   align-self: center;
   font-size: 20px;
   color: #fff;
-  margin: 1rem 0;
+  margin: 1rem 1.5rem;
+  white-space: nowrap;
 
   :hover {
     color: #fea027;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 1080px) {
+    margin: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
     font-size: 16px;
   }
 `;
 
 const Footer = ({ isMobile }) => {
-  console.log("isMobile Footer = ", isMobile);
   return (
     <Section>
       <FooterContainer>
@@ -87,8 +100,9 @@ const Footer = ({ isMobile }) => {
           <InfoContainer>
             <InfoWrapper isMobile={isMobile}>
               <Logo
-                noMargin={true}
+                noMargin={isMobile ? false : true}
                 showText={true}
+                isMobile={isMobile}
                 showInCloumn={isMobile ? false : true}
                 src={logoImage}
                 alt="StoryTrap"
@@ -141,12 +155,9 @@ const Footer = ({ isMobile }) => {
             <Link href="/contact-us" passHref>
               <PageListItem>Contact Us</PageListItem>
             </Link>
-          </NavPagesList>
-          <NavPagesList>
             <Link href="/privacy-policy" passHref>
               <PageListItem>Privacy Policy</PageListItem>
             </Link>
-            {/* <PageListItem>Terms of services</PageListItem> */}
           </NavPagesList>
         </FooterWrapper>
       </FooterContainer>

@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styled from "@emotion/styled";
-import { useMediaQuery } from "react-responsive";
+import useDeviceDetect from "../components/hooks/useDeviceDetect";
 
 import HeroSection from "../components/organism/HeroSection/HeroSection";
 import Layout from "../components/templates/Layout/Layout";
@@ -16,11 +16,10 @@ const ContentContainer = styled.div`
 `;
 
 export default function Home() {
-  const isMobile = useMediaQuery({ query: "(max-width:600px)" });
+  const isMobile = useDeviceDetect();
 
-  console.log("isMobile", isMobile);
   return (
-    <Layout>
+    <Layout isMobile={isMobile}>
       <HeroSection isMobile={isMobile} />
       <StoriesSection isMobile={isMobile} />
 

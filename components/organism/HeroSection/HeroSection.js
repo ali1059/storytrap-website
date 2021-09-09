@@ -3,6 +3,8 @@ import styled from "@emotion/styled";
 import Image from "next/image";
 import { Animate } from "react-simple-animate";
 import { AnimateKeyframes } from "react-simple-animate";
+import { useMediaQuery } from "react-responsive";
+// import { isMobile } from "react-device-detect";
 
 import HeroImage from "../../../public/assets/heroImage.png";
 import Navbar from "../Navbar/Navbar";
@@ -38,10 +40,14 @@ const Container = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-  min-height: 100vh;
+  min-height: ${(props) => (props.isMobile ? "130vh" : "100vh")};
   width: 100%;
   overflow: none;
   z-index: -1;
+
+  @media (max-width: 320px) {
+    min-height: 150vh;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -165,6 +171,12 @@ const HeroSection = ({ isMobile }) => {
   const [slide, setSlide] = useState(0);
   const [play, setPlay] = useState(true);
 
+  console.log("isMobile =", isMobile);
+
+  let bgImageSrc = isMobile
+    ? slidesArray[slide].MobileImageBG
+    : slidesArray[slide].BGImage;
+
   useEffect(() => {
     const timeout = setTimeout(() => setSlide((slide + 1 + 4) % 4), 5000);
 
@@ -172,7 +184,7 @@ const HeroSection = ({ isMobile }) => {
   }, [slide]);
 
   return (
-    <Container className="hero-section">
+    <Container>
       <AnimateKeyframes
         play={true}
         delay={0}
@@ -181,13 +193,9 @@ const HeroSection = ({ isMobile }) => {
         direction="alternate"
         keyframes={["transform: scale(1)", "transform: scale(1.1)"]}
       >
-        <ImageWrapper>
+        <ImageWrapper isMobile={isMobile}>
           <Image
-            src={
-              isMobile
-                ? slidesArray[slide].MobileImageBG
-                : slidesArray[slide].BGImage
-            }
+            src={bgImageSrc}
             alt="StoryTrap"
             placeholder="blur"
             layout="fill"
@@ -203,7 +211,7 @@ const HeroSection = ({ isMobile }) => {
         </TextContainer>
 
         <MoblieImageContainer>
-          <MobileImagesWrapper className="wrapperrrrrrrrrr">
+          <MobileImagesWrapper>
             <Animate
               play={play} // set play true to start the animation
               duration={0.75} // how long is the animation duration
@@ -220,17 +228,15 @@ const HeroSection = ({ isMobile }) => {
                   width={isMobile ? 154 : 250}
                   height={isMobile ? 307 : 499}
                   layout="intrinsic"
-                  placeholder="blur"
                 />
 
-                <SmallMobileWrapper className="---ssmmaallll---">
+                <SmallMobileWrapper>
                   <Image
                     alt="StoryTrap"
                     src={slidesArray[slide].MobileImageSS}
                     width={isMobile ? 112 : 200}
                     height={isMobile ? 224 : 399}
                     layout="intrinsic"
-                    placeholder="blur"
                   />
                 </SmallMobileWrapper>
               </LargeMobileWrapper>
