@@ -28,17 +28,17 @@ const Layout = ({
         title={title || "StoryTrap"}
         description={description || "StoryTrap"}
         image={image}
-        url={`https://storytrap.co${url}` || "https://storytrap.co"}
+        url={`https://storytrap.com${url}` || "https://storytrap.com"}
         isBlogPost={isBlogPost}
         openGraph={{
           type: "website",
-          url: `https://storytrap.co${url}`,
+          url: `https://storytrap.com${url}`,
           title: title,
           description: description,
           images: [
             { url: image, width: 800, height: 600, alt: "Og Image Alt" },
           ],
-          site_name: "Koala",
+          site_name: "StoryTrap",
         }}
         twitter={{
           handle: "@handle",
