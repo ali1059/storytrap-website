@@ -14,7 +14,7 @@ const NewStoriesTextContainer = () => {
         Stay up to date
       </Heading>
       <Heading centerAlign={true} size="medium">
-        We add <ColorHeading>New Stories Everyday</ColorHeading>
+        We keep <ColorHeading>adding New Stories</ColorHeading>
       </Heading>
     </Wrapper>
   );

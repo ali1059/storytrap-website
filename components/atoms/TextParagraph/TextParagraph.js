@@ -2,7 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 
 const Text = styled.p`
-  text-align: ${(props) => (props.align == "center" ? "center" : "left")};
+  text-align: ${(props) =>
+    props.align == "center" ? "center" : props.justify ? "justify" : "left"};
   color: #f8f8f8;
   letter-spacing: 0.48px;
   max-width: ${(props) => props.width};
@@ -17,9 +18,15 @@ const Text = styled.p`
   }
 `;
 
-const TextParagraph = ({ align, children, bold, nomargin, width }) => {
+const TextParagraph = ({ align, children, bold, nomargin, width, justify }) => {
   return (
-    <Text align={align} bold={bold} nomargin={nomargin} width={width}>
+    <Text
+      align={align}
+      bold={bold}
+      nomargin={nomargin}
+      width={width}
+      justify={justify}
+    >
       {children}
     </Text>
   );

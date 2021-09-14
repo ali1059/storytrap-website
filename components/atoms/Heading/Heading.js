@@ -2,7 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 
 const Text = styled.p`
-  text-align: ${(props) => (props.centerAlign ? "center" : "left")};
+  text-align: ${(props) =>
+    props.centerAlign ? "center" : props.justify ? "justify" : "left"};
   font-family: "metropolis-semibold";
   font-size: ${(props) =>
     props.size == "large"
@@ -19,9 +20,14 @@ const Text = styled.p`
   }
 `;
 
-const Heading = ({ children, size, centerAlign, colored }) => {
+const Heading = ({ children, size, centerAlign, colored, justify }) => {
   return (
-    <Text centerAlign={centerAlign} size={size} colored={colored}>
+    <Text
+      centerAlign={centerAlign}
+      size={size}
+      colored={colored}
+      justify={justify}
+    >
       {children}
     </Text>
   );

@@ -21,7 +21,8 @@ const Wrapper = styled.div`
 
 export const ButtonsWrapper = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: ${(props) =>
+    props.spaceBetween ? "space-between" : "space-around"};
 `;
 
 export const ButtonsContainer = styled.div`
@@ -43,11 +44,11 @@ const HeroTextContainer = ({ isMobile }) => {
     >
       <Container>
         <Wrapper>
-          <Heading size="large">
+          <Heading size="large" justify={false}>
             Escape into the World of Fiction with Story
             <ColorHeading>Trap </ColorHeading>
           </Heading>
-          <TextParagraph nomargin={false}>
+          <TextParagraph nomargin={false} justify={true}>
             Read snappy text messages and video conversations as if you’re
             reading someone else’s chat history in real life, except that these
             are the most fun and exciting chats ever!
@@ -55,13 +56,14 @@ const HeroTextContainer = ({ isMobile }) => {
           {!isMobile && (
             <ButtonsContainer>
               <TextParagraph bold={true}>Download the app now</TextParagraph>
-              <ButtonsWrapper>
+              <ButtonsWrapper spaceBetween={true}>
                 <Link href="https://apps.apple.com/in/app/story-trap/id1559372131">
                   <a target="_blank" rel="noopener noreferrer">
                     <Logo
-                      margin={true}
+                      margin={false}
                       showText={false}
                       src={AppStoreBtn}
+                      marginRight={true}
                       alt="StoryTrap AppStore"
                       path={null}
                       width={216}
@@ -72,8 +74,9 @@ const HeroTextContainer = ({ isMobile }) => {
                 <Link href="https://play.google.com/store/apps/details?id=com.journalpost.storytrap">
                   <a target="_blank" rel="noopener noreferrer">
                     <Logo
-                      margin={true}
+                      margin={false}
                       showText={false}
+                      marginLeft={true}
                       src={GooglePlayBtn}
                       alt="StoryTrap Googleplay"
                       path={null}

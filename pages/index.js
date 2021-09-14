@@ -9,6 +9,7 @@ import Layout from "../components/templates/Layout/Layout";
 import StoriesSection from "../components/organism/StoriesSection/StoriesSection";
 import ContactUsSection from "../components/organism/ContactUsSection/ContactUsSection";
 import NewStoriesSection from "../components/organism/NewStoriesSection/NewStoriesSection";
+// import Video from "../public/assets/Video.mp4";
 
 const ContentContainer = styled.div`
   max-width: 75rem;
@@ -22,7 +23,6 @@ export default function Home() {
     <Layout isMobile={isMobile}>
       <HeroSection isMobile={isMobile} />
       <StoriesSection isMobile={isMobile} />
-
       <ContentContainer>
         <NewStoriesSection />
         <ContactUsSection />

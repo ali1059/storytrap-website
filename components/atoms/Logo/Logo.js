@@ -18,6 +18,8 @@ const Wrapper = styled.div`
 
 const LogoImageWrapper = styled.div`
   align-self: ${(props) => props.showInCloumn && "flex-start"};
+  margin-left: ${(props) => props.marginLeft && "1rem"};
+  margin-right: ${(props) => props.marginRight && "1rem"};
 `;
 
 const LogoText = styled.p`
@@ -46,6 +48,8 @@ const Logo = ({
   margin,
   showInCloumn,
   noMargin,
+  marginLeft,
+  marginRight,
 }) => {
   return path !== null ? (
     <Link href={path}>
@@ -62,7 +66,11 @@ const Logo = ({
     </Link>
   ) : (
     <Wrapper showInCloumn={showInCloumn} margin={margin}>
-      <LogoImageWrapper showInCloumn={showInCloumn}>
+      <LogoImageWrapper
+        marginRight={marginRight}
+        marginLeft={marginLeft}
+        showInCloumn={showInCloumn}
+      >
         <Image src={src} alt={alt} width={width} height={height} />
       </LogoImageWrapper>
       {showText && (

@@ -5,7 +5,6 @@ import { Animate } from "react-simple-animate";
 import { AnimateKeyframes } from "react-simple-animate";
 import { useMediaQuery } from "react-responsive";
 // import { isMobile } from "react-device-detect";
-
 import HeroImage from "../../../public/assets/heroImage.png";
 import Navbar from "../Navbar/Navbar";
 import {
