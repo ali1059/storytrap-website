@@ -5,6 +5,7 @@ import Image from "next/image";
 import useDeviceDetect from "../../hooks/useDeviceDetect";
 import IphoneImg from "../../../public/assets/mobile-skelton2.png";
 import StoriesCover from "../../../public/assets/storiesCovers.png";
+import StoriesCoverMobile from "../../../public/assets/storiesImageM.png";
 
 const Container = styled.div`
   position: relative;
@@ -22,7 +23,7 @@ const MobileContainer = styled.div`
   right: 20%;
 
   @media (max-width: 768px) {
-    bottom: 0;
+    top: 20%;
     right: 20%;
   }
 `;
@@ -53,7 +54,7 @@ const StoriesImageContainer = () => {
     <Container>
       <ImageWrapper>
         <Image
-          src={StoriesCover}
+          src={isMobile ? StoriesCoverMobile : StoriesCover}
           alt="StoryTrap"
           layout="fill"
           objectFit="cover"

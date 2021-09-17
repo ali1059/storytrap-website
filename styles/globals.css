@@ -20,7 +20,7 @@
 
 @font-face {
   font-family: "Franklin-Gothic";
-  src: local("Franklin-Gothic"), url(../fonts/FranklinGothicMedium.ttf);
+  src: local("Franklin-Gothic"), url(../fonts/Franklin-Gothic-Medium.woff);
 }
 
 html,
@@ -43,6 +43,12 @@ a {
 .swiper {
   width: 100%;
   height: 100%;
+}
+
+.swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+  position: relative;
 }
 
 .swiper-slide {
@@ -73,8 +79,32 @@ a {
   object-fit: cover;
 }
 
-/* .activeSlide {
-  transform: scale(1.5);
+/* .swiper-wrapper {
+  width: -500px;
+}
+
+.tteesstt {
+  animation: slide 5s linear infinite;
+}
+
+.barrier {
+  overflow: hidden;
+  position: relative;
+}
+
+.lane {
+  display: flex;
+  height: 100%;
+  width: calc(180px * 24);
+}
+
+.activeSlide {
+}
+
+@keyframes slide {
+  to {
+    transform: translateX(calc(-180px * 12));
+  }
 } */
 
 @media screen and (max-width: 600px) {

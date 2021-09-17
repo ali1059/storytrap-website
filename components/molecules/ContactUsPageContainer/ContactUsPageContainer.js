@@ -32,7 +32,7 @@ const Wrapper = styled.div`
   z-index: 2;
 
   margin: auto;
-  padding: 4rem;
+  padding: 2rem 4rem;
 
   @media (max-width: 900px) {
     position: absolute;
@@ -78,7 +78,7 @@ const FormFieldInput = styled.input`
   border-bottom: 1px solid #707070;
   width: 100%;
   padding: ${(props) => (props.isMobile ? "0.5rem 0" : "1rem 0")};
-  margin-bottom: ${(props) => (props.isMobile ? "0.5rem 0" : "2rem")};
+  margin-bottom: ${(props) => (props.isMobile ? "0.5rem 0" : "1rem")};
   :focus {
     outline: none;
   }

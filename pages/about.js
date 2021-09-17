@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 
+import useDeviceDetect from "../components/hooks/useDeviceDetect";
 import AboutHeaderSection from "../components/organism/AboutHeaderSection/AboutHeaderSection";
 import Layout from "../components/templates/Layout/Layout";
 import BGImg1 from "../public/assets/AboutBackgrounds/BG1.png";
@@ -39,8 +40,10 @@ const Content = [
 ];
 
 const About = () => {
+  const isMobile = useDeviceDetect();
+
   return (
-    <Layout>
+    <Layout isMobile={isMobile}>
       {Content.map((item, index) => (
         <AboutHeaderSection
           key={index}

@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: ${(props) => (props.showInCloumn ? "column" : "row")};
   align-items: center;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Franklin-Gothic", "Arial Narrow", Arial, sans-serif;
   margin: ${(props) => props.margin && "0 1.5rem"};
   justify-content: center;
 
@@ -26,7 +26,7 @@ const LogoText = styled.p`
   font-size: 44px;
   color: #f8f8f8;
   margin: ${(props) => (props.noMargin ? "0" : "0 1rem")};
-  font-family: "Franklin Gothic Medium";
+  font-family: "Franklin-Gothic";
   align-self: ${(props) => props.showInCloumn && "flex-start"};
 
   @media (max-width: 600px) {

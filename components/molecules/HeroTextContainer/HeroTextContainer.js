@@ -45,8 +45,8 @@ const HeroTextContainer = ({ isMobile }) => {
       <Container>
         <Wrapper>
           <Heading size="large" justify={false}>
-            Escape into the World of Fiction with Story
-            <ColorHeading>Trap </ColorHeading>
+            Escape into the World of
+            <ColorHeading> Fiction </ColorHeading>
           </Heading>
           <TextParagraph nomargin={false} justify={true}>
             Read snappy text messages and video conversations as if you’re

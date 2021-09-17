@@ -19,6 +19,11 @@ import { transform } from "dom7";
 // install Swiper modules
 SwiperCore.use([Pagination]);
 
+// React.useEffect(() => {
+//   console.log("In USEEFFECT");
+//   Swiper.autoplay.start();
+// }, []);
+
 const Slides = [
   { name: "", src: Slide1 },
   { name: "", src: Slide2 },
@@ -34,6 +39,10 @@ const NewStoriesSlider = () => {
         slidesPerView={3}
         spaceBetween={30}
         pagination={false}
+        loop={true}
+        autoplay={{ delay: 1, disableOnInteraction: true }}
+        freeMode={true}
+        speed={5000}
         breakpoints={{
           300: { slidesPerView: 1.5, spaceBetween: 20 },
 
@@ -46,12 +55,11 @@ const NewStoriesSlider = () => {
             spaceBetween: 40,
           },
         }}
-        className="mySwiper"
+        className="my-swiper"
       >
         {Slides.map((item, index) => (
           <SwiperSlide key={index}>
             {({ isActive }) => (
-              //   <h1>Current slide is {isActive ? "active" : "not active"}</h1>
               <Image
                 className={"activeSlide "}
                 src={item.src}
@@ -61,18 +69,6 @@ const NewStoriesSlider = () => {
             )}
           </SwiperSlide>
         ))}
-        {/* <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>
-          {({ isActive }) => (
-            <div>
-              {console.log("HERE isActive = ", isActive)}
-              <h1>Current slide is {isActive ? "active" : "not active"}</h1>
-              Slide 4
-            </div>
-          )}
-        </SwiperSlide> */}
       </Swiper>
     </>
   );
