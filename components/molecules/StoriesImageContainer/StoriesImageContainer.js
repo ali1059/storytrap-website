@@ -28,12 +28,10 @@ const MobileContainer = styled.div`
   }
 `;
 
-const MobileWrapper = styled.div``;
-
 const Video = styled.video`
   left: 0rem;
   position: absolute;
-  top: 1.7rem;
+  top: 1.5rem;
   border-radius: 50px;
 
   @media (max-width: 768px) {
@@ -65,13 +63,13 @@ const StoriesImageContainer = () => {
         <MobileImageWrapper className="ImageWrapper">
           <Image
             src={IphoneImg}
-            width={isMobile ? 250 : 344}
-            height={isMobile ? 520 : 700}
+            width={isMobile ? 250 : 300}
+            height={isMobile ? 520 : 610}
           />
         </MobileImageWrapper>
         <Video
-          width={isMobile ? "250" : "347"}
-          height={isMobile ? "483" : "655"}
+          width={isMobile ? "250" : "303"}
+          height={isMobile ? "483" : "565"}
           autoPlay={true}
           muted={true}
           loop={true}
